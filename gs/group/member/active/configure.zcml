@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configure xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:five="http://namespaces.zope.org/five">
+
+  <browser:viewlet 
+    name="gs-group-member-active-list"
+    manager="gs.group.home.interfaces.IGroupHomepageSecondary"
+    template="browser/templates/viewlet.pt"
+    class=".viewlet.ActiveMembersViewlet"
+    permission="zope2.View"
+    weight="20"
+    title="Active Members" />
+
+</configure>
