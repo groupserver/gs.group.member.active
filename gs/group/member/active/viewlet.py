@@ -29,24 +29,6 @@ class ActiveMembersViewlet(MemberViewlet):
     @property
     def activeMembers(self):
         for userPost in self.userPosts:
-            a = ActiveMember(self.context, userPost['user_id'],
-                                userPost['post_id'], userPost['subject'])
+            a = createObject('groupserver.UserFromId', self.context,
+                                userPost['user_id'])
             yield a
-
-
-class ActiveMember(object):
-
-    def __init__(self, context, userId, postId, subject):
-        self.context = context
-        self.userId = userId
-
-        self.postInfo = PostInfo(postId, subject)
-        self.userInfo = createObject('groupserver.UserFromId', context, userId)
-
-
-class PostInfo(object):
-
-    def __init__(self, postId, subject):
-        self.id = postId
-        self.name = subject
-        self.url = "/r/post/{0}".format(postId)

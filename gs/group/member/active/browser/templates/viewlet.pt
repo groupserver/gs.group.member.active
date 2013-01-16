@@ -3,23 +3,17 @@
   <div id="gs-group-member-active-members">
     <tal:block repeat="activeUser view/activeMembers">
       <div class="vcard gs-group-member-active-members-member">
-        <p tal:define="user activeUser/userInfo/user; height string:54; 
+        <p tal:define="user activeUser/user; height string:54; 
                        width string:36;"
            tal:replace="structure provider:groupserver.UserImage">Photo</p>
-        <ul>
-          <li class="fn"><a class="url" href="#"
-                            tal:attributes="href activeUser/userInfo/url"
-                            tal:content="activeUser/userInfo/name">Name</a>
-          </li> 
-          <li class="minor post">
-            <a href="#" tal:attributes="href activeUser/postInfo/url">Posted in
-              <cite tal:content="activeUser/postInfo/name">a topic</cite></a>
-          </li>
-       </ul>
+        <p class="fn"><a class="url" href="#"
+                         tal:attributes="href activeUser/url"
+                         tal:content="activeUser/name">Name</a>
+        </p>
       </div><!--gs-group-member-active-members-member-->
     </tal:block>
   </div><!--gs-group-member-active-members-->
-  <ul id="gs-group-member-active-stats">
+  <ul id="gs-group-member-active-stats" class="dotted-inline-list">
     <li><a href="stats.html">Posting Statistics</a></li>
     <li><a href="log.html">Membership Statistics</a></li>
   </ul><!--gs-group-member-active-stats-->
