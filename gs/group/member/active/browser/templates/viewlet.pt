@@ -1,8 +1,9 @@
-<div id="gs-group-member-active">
-  <h3>Recently Active</h3>
-  <div id="gs-group-member-active-members">
+<div id="gs-group-member-active" role="region" 
+     aria-labelledby="gs-group-member-active-h">
+  <h3 id="gs-group-member-active-h">Recently Active</h3>
+  <div id="gs-group-member-active-members" role="list">
     <tal:block repeat="activeUser view/activeMembers">
-      <div class="vcard gs-group-member-active-members-member">
+      <div class="vcard gs-group-member-active-members-member" role="listitem">
         <p tal:define="user activeUser/user; height string:54; 
                        width string:36;"
            tal:replace="structure provider:groupserver.UserImage">Photo</p>
@@ -13,7 +14,8 @@
       </div><!--gs-group-member-active-members-member-->
     </tal:block>
   </div><!--gs-group-member-active-members-->
-  <ul id="gs-group-member-active-stats" class="dotted-inline-list">
+  <ul id="gs-group-member-active-stats" class="dotted-inline-list"
+      role="navigation">
     <li><a tal:attributes="href string:${view/groupInfo/relative_url}/stats.html"
            href="stats.html">Posting Statistics</a></li>
     <li><a tal:attributes="href string:${view/groupInfo/relative_url}/log.html"
