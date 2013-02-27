@@ -19,6 +19,7 @@ class ActiveMemberQuery(object):
 
         session = getSession()
         r = session.execute(s)
+        retval = []
         if r.rowcount:
             retval = [{'user_id': row['user_id'],
                         'max_date': row['max_date']} for row in r]
