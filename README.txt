@@ -17,14 +17,15 @@ Introduction
 ============
 
 This product provides a viewlet_ that list of most recently active members
-of a GroupServer_ group.
+of a GroupServer_ group. The idea is to provide a constantly changing list
+of people, to make the group look personable.
 
 Viewlet
 =======
 
 The viewlet ``gs-group-member-active-list`` lists the most recently active
-members, where *active* is defined as posting. It is the replacement for
-the old *Us Bar*.
+members, where *active* is defined as posting [#us]_. The list of people is
+shown in the right-hand side of the group page (the *Secondary* area).
 
 
 Resources
@@ -40,3 +41,5 @@ Resources
 .. _Michael JasonSmith: http://groupserver.org/p/mpj17
 .. _Creative Commons Attribution-Share Alike 3.0 New Zealand License:
    http://creativecommons.org/licenses/by-sa/3.0/nz/
+
+.. [#us] It is the replacement for the old *Us Bar*.

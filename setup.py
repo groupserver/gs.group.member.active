@@ -32,6 +32,12 @@ setup(name='gs.group.member.active',
     zip_safe=False,
     install_requires=[
         'setuptools',
+        'sqlalchemy',
+        'gs.database',
+        'gs.group.home',
+        'gs.group.member.viewlet',
+        'zope.cachedescriptors',
+        'zope.component',
     ],
     entry_points="""
     # -*- Entry points: -*-
