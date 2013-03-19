@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from zope.cachedescriptors.property import Lazy
 from zope.component import createObject
-from gs.group.member.base import MemberViewlet
+from gs.group.member.viewlet import MemberViewlet
 from queries import ActiveMemberQuery
 
 
