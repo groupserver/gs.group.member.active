@@ -13,7 +13,7 @@ class ActiveMembersViewlet(MemberViewlet):
 
     @Lazy
     def show(self):
-        retval = self.isMember or self.groupVisibility.isPublic
+        retval = self.isMember or self.viewTopics
         return retval
 
     @Lazy
