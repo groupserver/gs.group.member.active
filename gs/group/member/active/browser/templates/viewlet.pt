@@ -1,6 +1,9 @@
 <div id="gs-group-member-active" role="region" 
      aria-labelledby="gs-group-member-active-h">
   <h3 id="gs-group-member-active-h">Recently Active</h3>
+  <a id="gs-group-member-active-all-members" 
+     tal:attributes="href string:${view/groupInfo/relativeURL}/members.html"
+     href="members.html">All members</a>
   <div id="gs-group-member-active-members" role="list">
     <tal:block repeat="activeUser view/activeMembers">
       <div class="vcard gs-group-member-active-members-member" role="listitem">
