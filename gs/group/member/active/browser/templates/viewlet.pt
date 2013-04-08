@@ -1,9 +1,12 @@
 <div id="gs-group-member-active" role="region" 
      aria-labelledby="gs-group-member-active-h">
   <h3 id="gs-group-member-active-h">Recently active</h3>
-  <a id="gs-group-member-active-all-members" 
-     tal:attributes="href string:${view/groupInfo/relativeURL}/members.html"
-     href="members.html">All members</a>
+  <a id="gs-group-member-active-all-members"
+     tal:define="c view/membersInfo/fullMemberCount;"
+     tal:condition="python:c&gt;1"
+     tal:attributes="href string:${view/groupInfo/relativeURL}/members.html;
+                     title string:;"
+     href="members.html">All <span tal:content="c">n</span> members</a>
   <div id="gs-group-member-active-members" role="list">
     <tal:block repeat="activeUser view/activeMembers">
       <div class="vcard gs-group-member-active-members-member" role="listitem">

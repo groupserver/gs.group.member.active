@@ -2,6 +2,7 @@
 from zope.cachedescriptors.property import Lazy
 from zope.component import createObject
 from gs.group.member.viewlet import MemberViewlet
+from Products.GSGroupMember.groupMembersInfo import GSGroupMembersInfo
 from queries import ActiveMemberQuery
 
 
@@ -32,3 +33,8 @@ class ActiveMembersViewlet(MemberViewlet):
             a = createObject('groupserver.UserFromId', self.context,
                                 userPost['user_id'])
             yield a
+
+    @Lazy
+    def membersInfo(self):
+        retval = GSGroupMembersInfo(self.groupInfo.groupObj)
+        return retval
