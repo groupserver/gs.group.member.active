@@ -1,6 +1,6 @@
 <div id="gs-group-member-active" role="region" 
      aria-labelledby="gs-group-member-active-h">
-  <h3 id="gs-group-member-active-h">Recently Active</h3>
+  <h3 id="gs-group-member-active-h">Recently active</h3>
   <a id="gs-group-member-active-all-members" 
      tal:attributes="href string:${view/groupInfo/relativeURL}/members.html"
      href="members.html">All members</a>
@@ -18,9 +18,13 @@
   </div><!--gs-group-member-active-members-->
   <ul id="gs-group-member-active-stats" class="dotted-inline-list"
       role="navigation">
-    <li><a tal:attributes="href string:${view/groupInfo/relative_url}/stats.html"
-           href="stats.html">Posting Statistics</a></li>
-    <li><a tal:attributes="href string:${view/groupInfo/relative_url}/log.html"
-           href="log.html">Membership Statistics</a></li>
+    <li>
+      <a tal:attributes="href string:${view/groupInfo/relative_url}/stats.html"
+         href="stats.html">Posting statistics</a>
+    </li>
+    <li>
+      <a tal:attributes="href string:${view/groupInfo/relative_url}/log.html"
+         href="log.html">Membership statistics</a>
+    </li>
   </ul><!--gs-group-member-active-stats-->
 </div><!--gs-group-member-active-->
