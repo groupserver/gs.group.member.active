@@ -32,7 +32,8 @@ class ActiveMembersViewlet(MemberViewlet):
         for userPost in self.userPosts:
             a = createObject('groupserver.UserFromId', self.context,
                                 userPost['user_id'])
-            yield a
+            if not a.anonymous:
+                yield a
 
     @Lazy
     def membersInfo(self):
