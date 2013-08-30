@@ -1,7 +1,7 @@
 <div id="gs-group-member-active" role="region" 
      aria-labelledby="gs-group-member-active-h">
   <h3 id="gs-group-member-active-h">Recently active</h3>
-  <a id="gs-group-member-active-all-members"
+  <a id="gs-group-member-active-all-members" class="header-link"
      tal:define="c view/membersInfo/fullMemberCount;"
      tal:condition="python:c&gt;1"
      tal:attributes="href string:${view/groupInfo/relativeURL}/members.html;
