@@ -7,8 +7,14 @@
      tal:attributes="href string:${view/groupInfo/relativeURL}/members.html;
                      title string:;"
      href="members.html">All <span tal:content="c">n</span> members</a>
-  <div id="gs-group-member-active-ajax-hole">
+  <div id="gs-group-member-active-ajax-hole" style="display:none;">
+    &#160;
   </div><!--gs-group-member-active-ajax-hole-->
+  <p id="gs-group-member-active-loading" class="gs-search-loading"
+     role="status">
+    <img src="/++resource++anim/wait.gif" aria-visible="false" />
+    Loading the active members&#8230;
+  </p><!--gs-group-member-active-loading-->
   <ul id="gs-group-member-active-stats" class="dotted-inline-list"
       role="navigation">
     <li>
