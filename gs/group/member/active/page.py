@@ -14,6 +14,7 @@
 ##############################################################################
 from zope.cachedescriptors.property import Lazy
 from zope.component import createObject
+from AccessControl import getSecurityManager
 from gs.group.base import GroupPage
 from queries import ActiveMemberQuery
 
@@ -24,14 +25,23 @@ class ActiveMembersAjax(GroupPage):
         super(ActiveMembersAjax, self).__init__(group, request)
 
     @Lazy
+    def viewTopics(self):
+        # TODO: Figure out I could do this better.
+        msgs = self.context.messages
+        user = getSecurityManager().getUser()
+        retval = bool(user.has_permission('View', msgs))
+        return retval
+
+    @Lazy
     def query(self):
         retval = ActiveMemberQuery()
         return retval
 
     @Lazy
     def userPosts(self):
-        # FIXME: Add a viewTopics check!
-        retval = self.query.user_posts(self.siteInfo.id, self.groupInfo.id)
+        retval = []
+        if self.viewTopics:
+            retval = self.query.user_posts(self.siteInfo.id, self.groupInfo.id)
         return retval
 
     @property
