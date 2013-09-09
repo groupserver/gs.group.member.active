@@ -11,6 +11,14 @@
     permission="zope2.View"
     weight="20"
     title="Active Members" />
+  <browser:viewlet 
+    name="gs-group-member-active-list-js"
+    manager="gs.group.home.interfaces.IGroupHomepageScripts"
+    template="browser/templates/javascript.pt"
+    class=".viewlet.ActiveMembersViewlet"
+    permission="zope2.View"
+    weight="20"
+    title="Active Members JavaScript" />
 
   <browser:page
     name="gs-group-member-active-ajax.html"
@@ -18,5 +26,10 @@
     class=".page.ActiveMembersAjax"
     template="browser/templates/ajax.pt"
     permission="zope2.View" />
+
+  <browser:resource
+    name="gs-group-member-active-20130909.js"
+    file="browser/javascript/ajax.js"
+    permission="zope2.Public" />
 
 </configure>

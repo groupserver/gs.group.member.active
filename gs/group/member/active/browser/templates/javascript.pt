@@ -1,0 +1,6 @@
+<script 
+  id="gs-group-member-active-list-js"
+  type="text/javascript"
+  defer="true"
+  tal:attributes="data-group-url view/groupInfo/relativeURL"
+  src="/++resource++gs-group-member-active-20130909.js"> </script>
