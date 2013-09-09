@@ -12,4 +12,11 @@
     weight="20"
     title="Active Members" />
 
+  <browser:page
+    name="gs-group-member-active-ajax.html"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    class=".page.ActiveMembersAjax"
+    template="browser/templates/ajax.pt"
+    permission="zope2.View" />
+
 </configure>

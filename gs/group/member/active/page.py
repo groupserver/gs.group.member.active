@@ -13,22 +13,31 @@
 #
 ##############################################################################
 from zope.cachedescriptors.property import Lazy
-from gs.group.member.viewlet import MemberViewlet
-from Products.GSGroupMember.groupMembersInfo import GSGroupMembersInfo
+from zope.component import createObject
+from gs.group.base import GroupPage
+from queries import ActiveMemberQuery
 
 
-class ActiveMembersViewlet(MemberViewlet):
+class ActiveMembersAjax(GroupPage):
 
-    def __init__(self, group, request, view, manager):
-        super(ActiveMembersViewlet, self).__init__(group, request, view,
-                                                    manager)
+    def __init__(self, group, request):
+        super(ActiveMembersAjax, self).__init__(group, request)
 
     @Lazy
-    def show(self):
-        retval = self.isMember or self.viewTopics
+    def query(self):
+        retval = ActiveMemberQuery()
         return retval
 
     @Lazy
-    def membersInfo(self):
-        retval = GSGroupMembersInfo(self.groupInfo.groupObj)
+    def userPosts(self):
+        # FIXME: Add a viewTopics check!
+        retval = self.query.user_posts(self.siteInfo.id, self.groupInfo.id)
         return retval
+
+    @property
+    def activeMembers(self):
+        for userPost in self.userPosts:
+            a = createObject('groupserver.UserFromId', self.context,
+                                userPost['user_id'])
+            if not a.anonymous:
+                yield a

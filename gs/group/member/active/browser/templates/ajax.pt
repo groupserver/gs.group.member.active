@@ -1,0 +1,12 @@
+<div id="gs-group-member-active-members" role="list">
+  <tal:block repeat="activeUser view/activeMembers">
+    <div class="vcard gs-group-member-active-members-member" role="listitem">
+      <p tal:define="user activeUser/user; size string:35;"
+         tal:replace="structure provider:groupserver.SquareUserImage">Photo</p>
+      <p class="fn"><a class="url" href="#"
+                       tal:attributes="href activeUser/url"
+                       tal:content="activeUser/name">Name</a>
+      </p>
+    </div><!--gs-group-member-active-members-member-->
+  </tal:block>
+</div><!--gs-group-member-active-members-->
