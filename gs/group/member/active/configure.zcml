@@ -31,5 +31,9 @@
     name="gs-group-member-active-20130909.js"
     file="browser/javascript/ajax.js"
     permission="zope2.Public" />
+  <browser:resource
+    name="gs-group-member-active-20130909-min.js"
+    file="browser/javascript/ajax-min.js"
+    permission="zope2.Public" />
 
 </configure>
