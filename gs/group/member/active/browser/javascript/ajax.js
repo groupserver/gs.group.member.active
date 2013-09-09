@@ -1,3 +1,9 @@
+// Copyright © 2013 OnlineGroups.net and Contributors.
+// All Rights Reserved.
+//
+// This software is subject to the provisions of the Zope Public License,
+// Version 2.1 (ZPL). http://groupserver.org/downloads/license/
+
 jQuery.noConflict();
 
 function gs_group_member_active_loaded (response, status, xhr) {
