@@ -20,13 +20,6 @@
     weight="20"
     title="Active Members JavaScript" />
 
-  <browser:page
-    name="gs-group-member-active-ajax.html"
-    for="gs.group.base.interfaces.IGSGroupMarker"
-    class=".page.ActiveMembersAjax"
-    template="browser/templates/ajax.pt"
-    permission="zope2.View" />
-
   <browser:resource
     name="gs-group-member-active-20130909.js"
     file="browser/javascript/ajax.js"
@@ -35,5 +28,12 @@
     name="gs-group-member-active-20130909-min.js"
     file="browser/javascript/ajax-min.js"
     permission="zope2.Public" />
+
+  <browser:page
+    name="gs-group-member-active-ajax.html"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    class=".page.ActiveMembersAjax"
+    template="browser/templates/ajax.pt"
+    permission="zope2.View" />
 
 </configure>
