@@ -22,8 +22,8 @@
          href="stats.html">Posting statistics</a>
     </li>
     <li>
-      <a tal:attributes="href string:${view/groupInfo/relative_url}/log.html"
-         href="log.html">Membership statistics</a>
+      <a tal:attributes="href string:${view/groupInfo/relative_url}/members.html"
+         href="log.html">Membership</a>
     </li>
   </ul><!--gs-group-member-active-stats-->
 </div><!--gs-group-member-active-->
