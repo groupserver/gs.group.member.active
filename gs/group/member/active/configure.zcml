@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<configure xmlns="http://namespaces.zope.org/zope"
-  xmlns:browser="http://namespaces.zope.org/browser"
-  xmlns:five="http://namespaces.zope.org/five">
+<!-- Copyright © 2013 OnlineGroups.net and Contributors. -->
+<!-- All Rights Reserved. -->
 
-  <browser:viewlet 
+<!-- This software is subject to the provisions of the Zope Public -->
+<!-- License, Version 2.1 (ZPL).  A copy of the ZPL should accompany this -->
+<!-- distribution. -->
+
+<!-- THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED -->
+<!-- WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED -->
+<!-- WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND -->
+<!-- FITNESS FOR A PARTICULAR PURPOSE. -->
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           i18n_domain="groupserver">
+
+  <include package="zope.viewlet" file="meta.zcml" />
+
+  <browser:viewlet
     name="gs-group-member-active-list"
     manager="gs.group.home.interfaces.IGroupHomepageSecondary"
     template="browser/templates/viewlet.pt"
@@ -11,7 +24,7 @@
     permission="zope2.View"
     weight="20"
     title="Active Members" />
-  <browser:viewlet 
+  <browser:viewlet
     name="gs-group-member-active-list-js"
     manager="gs.group.home.interfaces.IGroupHomepageScripts"
     template="browser/templates/javascript.pt"

@@ -1,4 +1,4 @@
-<div id="gs-group-member-active" role="region" 
+<div id="gs-group-member-active" role="region"
      aria-labelledby="gs-group-member-active-h">
   <h3 id="gs-group-member-active-h">Recently active</h3>
   <a id="gs-group-member-active-all-members" class="header-link"
