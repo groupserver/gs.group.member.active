@@ -9,4 +9,7 @@
       </p>
     </div><!--gs-group-member-active-members-member-->
   </tal:block>
+  <p class="muted" tal:condition="not:view/length">
+    People are yet to post to this group.
+  </p>
 </div><!--gs-group-member-active-members-->

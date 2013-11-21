@@ -44,6 +44,13 @@ class ActiveMembersAjax(GroupPage):
             retval = self.query.user_posts(self.siteInfo.id, self.groupInfo.id)
         return retval
 
+    @Lazy
+    def length(self):
+        # --=mpj17=-- Not actually the length (because of the anonymous
+        # user check below) but close, and good enough for new groups.
+        retval = len(self.userPosts)
+        return retval
+
     @property
     def activeMembers(self):
         for userPost in self.userPosts:
