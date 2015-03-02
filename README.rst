@@ -59,6 +59,8 @@ Resources
 
 - Code repository:
   https://github.com/groupserver/gs.group.member.active
+- Translations:
+  https://www.transifex.com/projects/p/gs-group-member-active/
 - Questions and comments to
   http://groupserver.org/groups/development
 - Report bugs at https://redmine.iopen.net/projects/groupserver
