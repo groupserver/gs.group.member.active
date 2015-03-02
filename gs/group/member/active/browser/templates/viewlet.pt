@@ -1,18 +1,26 @@
-<div id="gs-group-member-active" role="region"
+<div xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     i18n:domain="gs.group.member.active"
+     id="gs-group-member-active" role="region"
      aria-labelledby="gs-group-member-active-h">
-  <h3 id="gs-group-member-active-h">Recently active</h3>
+  <h3 id="gs-group-member-active-h"
+      i18n:translate="recently-active">Recently active</h3>
   <a id="gs-group-member-active-all-members" class="header-link"
      tal:define="c view/membersInfo/fullMemberCount;"
      tal:condition="python:c&gt;1"
-     tal:attributes="href string:${view/groupInfo/relativeURL}/members.html;
-                     title string:;"
-     href="members.html">All <span tal:content="c">n</span> members</a>
+     tal:attributes="href string:${view/groupInfo/relativeURL}/members.html;"
+     href="members.html"
+     i18n:translate="all-members">All <span i18n:name="numMembers"
+                                            tal:content="c">n</span>
+      members</a>
   <div id="gs-group-member-active-ajax-hole" style="display:none;">
     &#160;
   </div><!--gs-group-member-active-ajax-hole-->
   <p id="gs-group-member-active-loading" class="gs-search-loading"
-     role="status">
-    <span data-icon="&#xe619;" aria-hidden="true" class="loading"> </span>
+     role="status"
+     i18n:translate="loading">
+    <span i18n:name="loadingIcon" data-icon="&#xe619;" aria-hidden="true"
+          class="loading"> </span>
     Loading the list of  active members&#8230;
   </p><!--gs-group-member-active-loading-->
   <div id="gs-group-member-active-stats"
@@ -20,11 +28,13 @@
     <ul class="dotted-inline-list">
       <li>
         <a tal:attributes="href string:${view/groupInfo/relative_url}/stats.html"
-           href="stats.html">Posting statistics</a>
+           href="stats.html"
+           i18n:translate="posting-statistics">Posting statistics</a>
       </li>
       <li>
         <a tal:attributes="href string:${view/groupInfo/relative_url}/members.html"
-           href="log.html">Membership</a>
+           href="log.html"
+           i18n:translate="view-membership">Membership</a>
       </li>
     </ul>
   </div><!--gs-group-member-active-stats-->

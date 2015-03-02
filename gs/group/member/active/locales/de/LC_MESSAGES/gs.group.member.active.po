@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-03-02 17:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#. Default: "All ${numMembers} members"
+#: ./browser/templates/viewlet.pt:13
+msgid "all-members"
+msgstr ""
+
+#. Default: "${loadingIcon} Loading the list of active members…"
+#: ./browser/templates/viewlet.pt:22
+msgid "loading"
+msgstr ""
+
+#. Default: "People are yet to post to this group."
+#: ./browser/templates/ajax.pt:15
+msgid "no-posts"
+msgstr ""
+
+#. Default: "Posting statistics"
+#: ./browser/templates/viewlet.pt:30
+msgid "posting-statistics"
+msgstr ""
+
+#. Default: "Recently active"
+#: ./browser/templates/viewlet.pt:6
+msgid "recently-active"
+msgstr ""
+
+#. Default: "Membership"
+#: ./browser/templates/viewlet.pt:35
+msgid "view-membership"
+msgstr ""
+

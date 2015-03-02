@@ -1,4 +1,7 @@
-<div id="gs-group-member-active-members" role="list">
+<div xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     i18n:domain="gs.group.member.active"
+     id="gs-group-member-active-members" role="list">
   <tal:block repeat="activeUser view/activeMembers">
     <div class="vcard gs-group-member-active-members-member" role="listitem">
       <p tal:define="user activeUser/user; size string:35;"
@@ -9,7 +12,8 @@
       </p>
     </div><!--gs-group-member-active-members-member-->
   </tal:block>
-  <p class="muted" tal:condition="not:view/length">
+  <p class="muted" tal:condition="not:view/length"
+     i18n:translate="no-posts">
     People are yet to post to this group.
   </p>
 </div><!--gs-group-member-active-members-->
