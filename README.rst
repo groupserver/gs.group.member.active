@@ -16,7 +16,6 @@ The active member list for the group page
 ..  _Creative Commons Attribution-Share Alike 4.0 International License:
     http://creativecommons.org/licenses/by-sa/4.0/
 
-
 Introduction
 ============
 
