@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+############################################################################
 #
 # Copyright © 2013 OnlineGroups.net and Contributors.
 # All Rights Reserved.
@@ -11,7 +11,7 @@
 # WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
 # FOR A PARTICULAR PURPOSE.
 #
-##############################################################################
+############################################################################
 from zope.cachedescriptors.property import Lazy
 from zope.component import createObject
 from AccessControl import getSecurityManager
@@ -41,7 +41,8 @@ class ActiveMembersAjax(GroupPage):
     def userPosts(self):
         retval = []
         if self.viewTopics:
-            retval = self.query.user_posts(self.siteInfo.id, self.groupInfo.id)
+            retval = self.query.user_posts(self.siteInfo.id,
+                                           self.groupInfo.id)
         return retval
 
     @Lazy
