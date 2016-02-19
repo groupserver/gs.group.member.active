@@ -6,7 +6,7 @@
   <h3 id="gs-group-member-active-h"
       i18n:translate="recently-active">Recently active</h3>
   <a id="gs-group-member-active-all-members" class="header-link"
-     tal:define="c view/membersInfo/fullMemberCount;"
+     tal:define="c python:len(view.fullMembers);"
      tal:condition="python:c&gt;1"
      tal:attributes="href string:${view/groupInfo/relativeURL}/members.html;"
      href="members.html"

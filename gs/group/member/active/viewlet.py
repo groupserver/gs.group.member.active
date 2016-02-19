@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ############################################################################
 #
-# Copyright © 2013 OnlineGroups.net and Contributors.
+# Copyright © 2013, 2016 OnlineGroups.net and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,
@@ -12,16 +12,16 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ############################################################################
+from __future__ import absolute_import, unicode_literals, print_function
 from zope.cachedescriptors.property import Lazy
 from gs.group.member.viewlet import MemberViewlet
-from Products.GSGroupMember.groupMembersInfo import GSGroupMembersInfo
+from gs.group.member.base import FullMembers
 
 
 class ActiveMembersViewlet(MemberViewlet):
 
     def __init__(self, group, request, view, manager):
-        super(ActiveMembersViewlet, self).__init__(group, request, view,
-                                                    manager)
+        super(ActiveMembersViewlet, self).__init__(group, request, view, manager)
 
     @Lazy
     def show(self):
@@ -29,6 +29,6 @@ class ActiveMembersViewlet(MemberViewlet):
         return retval
 
     @Lazy
-    def membersInfo(self):
-        retval = GSGroupMembersInfo(self.groupInfo.groupObj)
+    def fullMembers(self):
+        retval = FullMembers(self.context)
         return retval
