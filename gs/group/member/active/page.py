@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ############################################################################
 #
-# Copyright © 2013 OnlineGroups.net and Contributors.
+# Copyright © 2013, 2016 OnlineGroups.net and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,
@@ -12,11 +12,12 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ############################################################################
+from __future__ import absolute_import, unicode_literals, print_function
 from zope.cachedescriptors.property import Lazy
 from zope.component import createObject
 from AccessControl import getSecurityManager
 from gs.group.base import GroupPage
-from queries import ActiveMemberQuery
+from .queries import ActiveMemberQuery
 
 
 class ActiveMembersAjax(GroupPage):
@@ -41,8 +42,7 @@ class ActiveMembersAjax(GroupPage):
     def userPosts(self):
         retval = []
         if self.viewTopics:
-            retval = self.query.user_posts(self.siteInfo.id,
-                                           self.groupInfo.id)
+            retval = self.query.user_posts(self.siteInfo.id, self.groupInfo.id)
         return retval
 
     @Lazy
@@ -55,7 +55,6 @@ class ActiveMembersAjax(GroupPage):
     @property
     def activeMembers(self):
         for userPost in self.userPosts:
-            a = createObject('groupserver.UserFromId', self.context,
-                                userPost['user_id'])
+            a = createObject('groupserver.UserFromId', self.context, userPost['user_id'])
             if not a.anonymous:
                 yield a
