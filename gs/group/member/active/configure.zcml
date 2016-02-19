@@ -36,11 +36,11 @@
     title="Active Members JavaScript" />
 
   <browser:resource
-    name="gs-group-member-active-20140313.js"
+    name="gs-group-member-active-20160219.js"
     file="browser/javascript/ajax.js"
     permission="zope2.Public" />
   <browser:resource
-    name="gs-group-member-active-min-20140313.js"
+    name="gs-group-member-active-min-20160219.js"
     file="browser/javascript/ajax-min.js"
     permission="zope2.Public" />
 

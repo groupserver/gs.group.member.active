@@ -1,5 +1,1 @@
-"use strict";jQuery.noConflict();function gs_group_member_active_loaded(b,a,e){var d="slow",c="swing";
-jQuery("#gs-group-member-active-loading").fadeOut(d,c);jQuery("#gs-group-member-active-ajax-hole").fadeIn(d,c)
-}jQuery(window).load(function(){var b=null,a=null,c=null;b=jQuery("#gs-group-member-active-list-js").attr("data-group-url");
-a=b+"/gs-group-member-active-ajax.html";c=jQuery("#gs-group-member-active-ajax-hole");
-c.load(a,gs_group_member_active_loaded)});
+'use strict';jQuery.noConflict();function gs_group_member_active_loaded(a,b,c){jQuery("#gs-group-member-active-loading").fadeOut("slow","swing");jQuery("#gs-group-member-active-ajax-hole").fadeIn("slow","swing")}jQuery(window).load(function(){var a=null,b=a=null,a=jQuery("#gs-group-member-active-list-js").attr("data-group-url"),a=a+"/gs-group-member-active-ajax.html",b=jQuery("#gs-group-member-active-ajax-hole");b.load(a,gs_group_member_active_loaded)});
