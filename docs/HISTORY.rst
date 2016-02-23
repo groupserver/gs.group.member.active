@@ -1,6 +1,20 @@
 Changelog
 =========
 
+2.2.2 (2016-02-23)
+------------------
+
+* [DE] Updating the German translation, thanks to Cousin Clara
+* Using the updated code in the `gs.group.member.base`_ product
+* Ensuring the JavaScript passes the `Google Closure Linter`_
+* Adding some unit tests
+
+.. _gs.group.member.base:
+   https://github.com/groupserver/gs.group.member.base
+.. _Google Closure Linter:
+   https://developers.google.com/closure/utilities/
+
+
 2.2.1 (2015-03-11)
 ------------------
 
