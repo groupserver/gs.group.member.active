@@ -21,6 +21,7 @@ from .queries import ActiveMemberQuery
 
 
 class ActiveMembersAjax(GroupPage):
+    '''The AJAX "page" that shows the users that have posted recently'''
 
     def __init__(self, group, request):
         super(ActiveMembersAjax, self).__init__(group, request)
@@ -40,6 +41,7 @@ class ActiveMembersAjax(GroupPage):
 
     @Lazy
     def userPosts(self):
+        '''Distinct users who post'''
         retval = []
         if self.viewTopics:
             retval = self.query.user_posts(self.siteInfo.id, self.groupInfo.id)

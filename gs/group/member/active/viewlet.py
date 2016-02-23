@@ -19,7 +19,7 @@ from gs.group.member.base import FullMembers
 
 
 class ActiveMembersViewlet(MemberViewlet):
-
+    '''The list of active members on the group page'''
     def __init__(self, group, request, view, manager):
         super(ActiveMembersViewlet, self).__init__(group, request, view, manager)
 
