@@ -77,3 +77,23 @@ class TestActiveMembersAjax(TestCase):
         activeMemberIds = [u.id for u in r]
         self.assertEqual(['a', 'b', 'c', ], activeMemberIds)
         self.assertEqual(3, m_cO.call_count)
+
+    @patch.object(ActiveMembersAjax, 'userPosts', new_callable=PropertyMock)
+    @patch.object(ActiveMembersAjax, 'groupInfo', new_callable=PropertyMock)
+    @patch.object(ActiveMembersAjax, 'siteInfo', new_callable=PropertyMock)
+    @patch('gs.group.member.active.page.createObject')
+    def test_active_members_odd(self, m_cO, m_sI, m_gI, m_uP):
+        '''Ensure people without a profile are skipped'''
+        m_gI.id = 'example_group'
+        m_sI.id = 'example'
+        m_uP.return_value = [{'user_id': u} for u in ['a', 'b', 'c', ]]
+        m_cO.side_effect = partial(self.create_user, anonymous=True)
+
+        group = MagicMock()
+        request = MagicMock()
+        a = ActiveMembersAjax(group, request)
+        r = a.activeMembers
+
+        activeMemberIds = [u.id for u in r]
+        self.assertEqual([], activeMemberIds)
+        self.assertEqual(3, m_cO.call_count)
